@@ -1,62 +1,82 @@
-﻿
-<header>
-    <div class="content-wrapper">
-        <div class="float-left">
-            <p class="site-title">
-               White Board-Introduce Yourself</p>
-        </div>
-    </div>
-</header>
+﻿@{ 
+    Layout = null;
+ }
+<html ng-app>
+    <head>
+        <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+        <script src="~/Scripts/angular.min.js"></script>
+        <script src="~/Scripts/Introduct.js"></script>
+          <script>
+              $(document).ready(function () {
+                  $.getJSON("api/person/", fillPersons);
+              });
 
-<div id="body">
-    <section class="content-wrapper main-content clear-fix">
-        <div>
-            <p>Name: <input type="text" id ="name" size = "5"/></p>
-            <p>Age: <input type="number" id ="age" size = "5"/></p>
-            <p>Sex: <select id="sex">
-                    <option value="male" selected="selected">Male</option>
-                    <option value="female">Female</option>
-                </select></p>
-            <p>Hometown: <input type="text" id ="hometown" size = "5"/></p>
-            <p>Hobby: <input type="text" id="hobby" size="5"></p>
-            <input type="button" value="submit" onclick="addPerson();"/>
-           </div> 
+              function fillPersons(persons) {
+                  $('#member').empty();
 
-        <div>
-            <h5>INFO</h5>
-            <ul id="member"/>
-        </div>
-    </section>
-</div>
-@section scripts {
-    <script>
-        $(document).ready(function() {
-            $.getJSON("api/person/", fillPersons);
-        });
-
-        function fillPersons(persons) {
-            $('#member').empty();
-
-            $.each(persons, function(key, val) { //why key?
-                var str = val.Name + val.Age.toString() + val.Sex + val.Hometown + val.Hobby;
-                $('<li/>', { text: str })
+                  $.each(persons, function (key, val) { 
+                      var str = val.Name + val.Age.toString() + val.Sex + val.Hometown + val.Hobby;
+                      $('<li/>', { text: "I am " + val.Name + ", " + val.Age.toString() + ", "
+                          +val.Sex +". My hometown is "+val.Hometown+" and I like "+val.Hobby+"."})
                     .appendTo($('#member'));
-            });
-        }
+                  });
+              }
 
-        function addPerson() {
-            var person = {
-                "Name": $('#name').val(),
-                "Age": $('#age').val(),
-                "Sex": $('#sex').val(),
-                "Hometown": $('#hometown').val(),
-                "Hobby": $('#hobby').val()
-            };
-            $.post("api/person/", person, ok);
-        }
+              function addPerson() {
+                  var person = {
+                      "Name": $('#name').val(),
+                      "Age": $('#age').val(),
+                      "Sex": $('#sex').val(),
+                      "Hometown": $('#hometown').val(),
+                      "Hobby": $('#hobby').val()
+                  };
 
-        var ok = function() {
-            $.get("api/person/", fillPersons);
-        };
+                  if ($('#name').val() == '' || $('#age').val() == '' || $('#hometown').val() == '' || $('#hobby').val() =='') {
+                      alert("Incomplate Data");
+                      return;
+                  }
+                  else {
+                      $.post("api/person/", person, ok);
+                      $('#name').attr("value", "");
+                      $('#age').attr("value", "");
+                      $('#hometown').attr("value", "");
+                      $('#hobby').attr("value", "");
+                  }           
+              }
+
+              var ok = function () {
+                  $.get("api/person/", fillPersons);
+              };
     </script>
-}
+    </head>
+    <body>
+    <table style="width: 100%; table-layout: fixed">
+        <tr>
+            <td id="hegang">blabla</td>
+            <td id="liujing">
+                <div>
+                    <h3>Introduce Yourself</h3>               
+                    <p>Name:<input type = "text" id ="name" /></p>
+                    <p>Age:<input type="number" id="age" />{{age}}</p>
+                    <p>Sex:
+                        <select id="sex"  id="sex">
+                            <option value="male" selected="selected">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </p>
+                    <p>Hometown:<input type = "text" id="hometown" /></p>
+                    <p>Hobby:<input type = "text" id="hobby" /></p>
+                    <input type="button" value="Submit" onclick="addPerson();"/>
+                </div>
+                <div>
+                    <h3>Introduction</h3>
+                    <ul id="member"/>
+                </div>
+            </td>
+            <td id="chenghong">blabla</td>
+         </tr>   
+    </table>
+    </body>
+</html>
+
+

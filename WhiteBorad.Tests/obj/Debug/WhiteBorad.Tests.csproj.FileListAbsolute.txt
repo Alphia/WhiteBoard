@@ -70,3 +70,7 @@ C:\Workspace\WhiteBoard\WhiteBorad.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Workspace\WhiteBoard\WhiteBorad.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Workspace\WhiteBoard\WhiteBorad.Tests\obj\Debug\WhiteBorad.Tests.dll
 C:\Workspace\WhiteBoard\WhiteBorad.Tests\obj\Debug\WhiteBorad.Tests.pdb
+C:\Workspace\WhiteBoard\WhiteBorad.Tests\bin\Debug\xunit.dll
+C:\Workspace\WhiteBoard\WhiteBorad.Tests\bin\Debug\xunit.extensions.dll
+C:\Workspace\WhiteBoard\WhiteBorad.Tests\bin\Debug\xunit.xml
+C:\Workspace\WhiteBoard\WhiteBorad.Tests\bin\Debug\xunit.extensions.xml
