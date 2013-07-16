@@ -1,0 +1,37 @@
+<person>
+  <member>
+    <name>LiuJing</name>
+    <age>25</age>
+    <sex>famel</sex>
+    <hometown>Xi'an</hometown>
+    <hobby>swimming</hobby>
+  </member>
+  <member>
+    <name>Xunzhezi</name>
+    <age>22</age>
+    <sex>famel</sex>
+    <hometown>Xi'an</hometown>
+    <hobby>play</hobby>
+  </member>
+  <member>
+    <name>zhangsan</name>
+    <age>28</age>
+    <sex>male</sex>
+    <hometown>beijing</hometown>
+    <hobby>reading</hobby>
+  </member>
+  <member>
+    <name>Lisi</name>
+    <age>36</age>
+    <sex>male</sex>
+    <hometown>Shanghai</hometown>
+    <hobby>Swim</hobby>
+  </member>
+  <member>
+    <name>Lilei</name>
+    <age>23</age>
+    <sex>male</sex>
+    <hometown>beijing</hometown>
+    <hobby>sleep</hobby>
+  </member>
+</person>

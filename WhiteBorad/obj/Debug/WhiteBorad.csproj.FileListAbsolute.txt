@@ -34,3 +34,39 @@ C:\Users\Apiple\documents\visual studio 2010\Projects\WhiteBorad\WhiteBorad\bin\
 C:\Users\Apiple\documents\visual studio 2010\Projects\WhiteBorad\WhiteBorad\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Apiple\documents\visual studio 2010\Projects\WhiteBorad\WhiteBorad\obj\Debug\WhiteBorad.dll
 C:\Users\Apiple\documents\visual studio 2010\Projects\WhiteBorad\WhiteBorad\obj\Debug\WhiteBorad.pdb
+C:\Workspace\WhiteBoard\WhiteBorad\bin\WhiteBorad.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\WhiteBorad.pdb
+C:\Workspace\WhiteBoard\WhiteBorad\bin\Antlr3.Runtime.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\EntityFramework.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\Microsoft.Web.Infrastructure.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\Newtonsoft.Json.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Net.Http.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Net.Http.Formatting.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Net.Http.WebRequest.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Helpers.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Http.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Http.WebHost.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Mvc.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Optimization.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Providers.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Razor.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.WebPages.Deployment.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.WebPages.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.WebPages.Razor.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\WebGrease.dll
+C:\Workspace\WhiteBoard\WhiteBorad\bin\EntityFramework.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\Newtonsoft.Json.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Net.Http.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Net.Http.Formatting.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Net.Http.WebRequest.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Helpers.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Http.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Http.WebHost.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Mvc.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.Razor.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.WebPages.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.WebPages.Deployment.xml
+C:\Workspace\WhiteBoard\WhiteBorad\bin\System.Web.WebPages.Razor.xml
+C:\Workspace\WhiteBoard\WhiteBorad\obj\Debug\ResolveAssemblyReference.cache
+C:\Workspace\WhiteBoard\WhiteBorad\obj\Debug\WhiteBorad.dll
+C:\Workspace\WhiteBoard\WhiteBorad\obj\Debug\WhiteBorad.pdb
