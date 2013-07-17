@@ -1,53 +1,54 @@
 ﻿@{ 
     Layout = null;
  }
-<html ng-app>
+<html>
     <head>
+        <title>WhiteBorad</title>
         <script src="~/Scripts/jquery-1.7.1.min.js"></script>
         <script src="~/Scripts/angular.min.js"></script>
         <script src="~/Scripts/Introduct.js"></script>
-          <script>
-              $(document).ready(function () {
-                  $.getJSON("api/person/", fillPersons);
-              });
+        <script>
+            $(document).ready(function () {
+                $.getJSON("api/person/", fillPersons);
+            });
 
-              function fillPersons(persons) {
-                  $('#member').empty();
+            function fillPersons(persons) {
+                $('#member').empty();
 
-                  $.each(persons, function (key, val) { 
-                      var str = val.Name + val.Age.toString() + val.Sex + val.Hometown + val.Hobby;
-                      $('<li/>', { text: "I am " + val.Name + ", " + val.Age.toString() + ", "
-                          +val.Sex +". My hometown is "+val.Hometown+" and I like "+val.Hobby+"."})
-                    .appendTo($('#member'));
-                  });
-              }
+                $.each(persons, function (key, val) { 
+                    var str = val.Name + val.Age.toString() + val.Sex + val.Hometown + val.Hobby;
+                    $('<li/>', { text: "I am " + val.Name + ", " + val.Age.toString() + ", "
+                        +val.Sex +". My hometown is "+val.Hometown+" and I like "+val.Hobby+"."})
+                        .appendTo($('#member'));
+                });
+            }
 
-              function addPerson() {
-                  var person = {
-                      "Name": $('#name').val(),
-                      "Age": $('#age').val(),
-                      "Sex": $('#sex').val(),
-                      "Hometown": $('#hometown').val(),
-                      "Hobby": $('#hobby').val()
-                  };
+            function addPerson() {
+                var person = {
+                    "Name": $('#name').val(),
+                    "Age": $('#age').val(),
+                    "Sex": $('#sex').val(),
+                    "Hometown": $('#hometown').val(),
+                    "Hobby": $('#hobby').val()
+                };
 
-                  if ($('#name').val() == '' || $('#age').val() == '' || $('#hometown').val() == '' || $('#hobby').val() =='') {
-                      alert("Incomplate Data");
-                      return;
-                  }
-                  else {
-                      $.post("api/person/", person, ok);
-                      $('#name').attr("value", "");
-                      $('#age').attr("value", "");
-                      $('#hometown').attr("value", "");
-                      $('#hobby').attr("value", "");
-                  }           
-              }
+                if ($('#name').val() == '' || $('#age').val() == '' || $('#hometown').val() == '' || $('#hobby').val() =='') {
+                    alert("Incomplate Data");
+                    return;
+                }
+                else {
+                    $.post("api/person/", person, ok);
+                    $('#name').attr("value", "");
+                    $('#age').attr("value", "");
+                    $('#hometown').attr("value", "");
+                    $('#hobby').attr("value", "");
+                }           
+            }
 
-              var ok = function () {
-                  $.get("api/person/", fillPersons);
-              };
-    </script>
+            var ok = function () {
+                $.get("api/person/", fillPersons);
+            };
+        </script>
     </head>
     <body>
     <table style="width: 100%; table-layout: fixed">
@@ -57,7 +58,7 @@
                 <div>
                     <h3>Introduce Yourself</h3>               
                     <p>Name:<input type = "text" id ="name" /></p>
-                    <p>Age:<input type="number" id="age" />{{age}}</p>
+                    <p>Age:<input type="number" id="age" /></p>
                     <p>Sex:
                         <select id="sex"  id="sex">
                             <option value="male" selected="selected">Male</option>
