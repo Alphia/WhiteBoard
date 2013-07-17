@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<wantedList>
+  <Wanted xmlns="">
+    <WantedId>1</WantedId>
+    <What>C# via CLR</What>
+    <ByWho>Grace</ByWho>
+  </Wanted>
+  <Wanted xmlns="">
+    <WantedId>2</WantedId>
+    <What>Effective C++</What>
+    <ByWho>Hong</ByWho>
+  </Wanted>
+
+</wantedList>

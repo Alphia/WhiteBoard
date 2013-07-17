@@ -1,0 +1,19 @@
+﻿    <input type="text" ng-model="search" class="search-query" placeholder="Search">
+    <table>
+    <thead>
+    <tr>
+    <th>Wanted</th>
+    <th>By Who</th>
+    <th><img src=""/></th>
+    </tr>
+    </thead>
+        <tbody>
+            <tr ng-repeat="wanted in wantedList | filter:search | orderBy:'name'">
+                <td>{{wanted.What}}</td>
+                <td>{{wanted.ByWho}}</td>
+                <!--<td>
+                        <i ng-click="" class="icon-pencil"></i>
+                    </td>-->
+            </tr>
+        </tbody>
+    </table>

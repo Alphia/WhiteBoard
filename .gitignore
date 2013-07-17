@@ -1,0 +1,4 @@
+.git
+Debug/*
+bin/
+obj/
