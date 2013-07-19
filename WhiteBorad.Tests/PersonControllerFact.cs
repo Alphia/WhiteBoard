@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
-using System.Web.Mvc;
 using Xunit;
 using WhiteBorad.Models;
 using WhiteBorad.Controllers;
-using WhiteBorad.Repositories;
+using System.Linq;
 
 namespace WhiteBorad.Tests
 {
@@ -19,8 +15,7 @@ namespace WhiteBorad.Tests
             var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             var path = Path.GetFullPath(baseDirectory + "../../../" + "testPerson.xml");
             var pController = new PersonController(path);
-            var personsFromGetPerson = (IList<Person>)pController.GetPerson();
-            Assert.Equal(2, personsFromGetPerson.Count);
+            Assert.Equal(2, pController.GetPerson().Count());
 
         }
         [Fact]
@@ -37,11 +32,10 @@ namespace WhiteBorad.Tests
                     Hobby = "playing"
                 };
             var oldController = new PersonController(path);
-            var oldPersons= (IList<Person>)oldController.GetPerson();     
+            var oldCount = oldController.GetPerson().Count();
             oldController.PostPerson(newPerson);
             var newController = new PersonController(path);
-            var newPersons= (IList<Person>)newController.GetPerson(); 
-            Assert.Equal(oldPersons.Count+1,newPersons.Count);
+            Assert.Equal(oldCount+1,newController.GetPerson().Count());
         }
 
 

@@ -1,14 +1,23 @@
-﻿function IntroductionController($scope) {
-    $scope.age = 25;
-    $scope.action = function () {
+﻿function IntroductionController($scope, $http) {
+
+    $http.get('api/person').success(function (data) {
+        $scope.persons = data;
+    });
+    $scope.AddAction = function () {
         var person = {
             "Name": $scope.name,
             "Age": $scope.age,
             "Sex": $scope.sex,
-            "Hometown": $scope.homtown,
+            "Hometown": $scope.hometown,
             "Hobby": $scope.hobby
         };
-        $http.post('api/person/', person).success(alert("success"));
+        $scope.persons.push(person);
+        $http.post('api/person', person).success(function () {
+            $scope.name = "";
+            $scope.age = "";
+            $scope.sex = "";
+            $scope.hometown = "";
+            $scope.hobby = "";
+        });
     };
-}
-
+};
