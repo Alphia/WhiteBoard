@@ -5,8 +5,13 @@
     <head>
         <title>WhiteBorad</title>
         <script src="~/Scripts/jquery-1.7.1.min.js"></script>
-        <script src="~/Scripts/angular.min.js"></script>
+        @*<script src="~/Scripts/angular.min.js"></script>*@
         <script src="~/Scripts/Introduct.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js">
+    </script>
+        <script src="../../Scripts/whiteBoard.js"></script>
+        <script src="../../Scripts/wantedController.js"></script>
         <script>
             $(document).ready(function () {
                 $.getJSON("api/person/", fillPersons);
@@ -49,11 +54,16 @@
                 $.get("api/person/", fillPersons);
             };
         </script>
+
     </head>
     <body>
     <table style="width: 100%; table-layout: fixed">
         <tr>
-            <td id="hegang">blabla</td>
+            <td id="hegang">
+                <div ng-include ng-controller="wantedController" src="Src" >
+            
+                </div>
+            </td>
             <td id="liujing">
                 <div>
                     <h3>Introduce Yourself</h3>               

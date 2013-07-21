@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
 using System.Web.Http;
@@ -10,7 +11,7 @@ namespace WhiteBorad.Controllers
 {
     public class WantedController : ApiController
     {
-        private const string Filepath = @"c:\Users\Apiple\documents\visual studio 2010\Projects\WhiteBorad\WhiteBorad\Models\wanted.xml";
+        private string Filepath = AppDomain.CurrentDomain.BaseDirectory + @"\Models\wanted.xml";
         // GET api/<controller>
         public List<Wanted> Get()
         {
