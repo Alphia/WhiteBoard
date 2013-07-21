@@ -1,8 +1,8 @@
-﻿alert(whiteBoard);
+﻿
 whiteBoard.controller('wantedController', ['$scope', '$http', function ($scope, $http) {
     $scope.Src = '/pages/WantedList.htm';
     $scope.wantedList = [];
-    alert("initializing");
+    
     var initialize = function () {
         syncWantedList();
     };
@@ -17,7 +17,7 @@ whiteBoard.controller('wantedController', ['$scope', '$http', function ($scope, 
                 return null;
             });
     };
-    
+    alert("initializing");
     initialize();
     alert("initialized!");
     $scope.getWantedById = function (id) {
