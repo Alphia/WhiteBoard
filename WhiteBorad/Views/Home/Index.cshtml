@@ -1,15 +1,13 @@
-﻿@{ 
-    Layout = null;
- }
-<html>
+﻿
+<html ng-app="whiteBoard">
     <head>
         <title>WhiteBorad</title>
         <script src="~/Scripts/jquery-1.7.1.min.js"></script>
         @*<script src="~/Scripts/angular.min.js"></script>*@
         <script src="~/Scripts/Introduct.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js">
-    </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js">
+        </script>
         <script src="../../Scripts/whiteBoard.js"></script>
         <script src="../../Scripts/wantedController.js"></script>
         <script>
@@ -55,6 +53,16 @@
             };
         </script>
 
+        <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css"/>
+        <script src="~/Scripts/Introduct.js"></script>
+        <style type="text/css">
+        .grid {
+            width: 200px;
+            height: 30px
+        }
+        </style>
+
+
     </head>
     <body>
     <table style="width: 100%; table-layout: fixed">
@@ -63,26 +71,64 @@
                 <div ng-include ng-controller="wantedController" src="Src" >
             
                 </div>
-            </td>
+        </td>
             <td id="liujing">
-                <div>
-                    <h3>Introduce Yourself</h3>               
-                    <p>Name:<input type = "text" id ="name" /></p>
-                    <p>Age:<input type="number" id="age" /></p>
-                    <p>Sex:
-                        <select id="sex"  id="sex">
-                            <option value="male" selected="selected">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </p>
-                    <p>Hometown:<input type = "text" id="hometown" /></p>
-                    <p>Hobby:<input type = "text" id="hobby" /></p>
-                    <input type="button" value="Submit" onclick="addPerson();"/>
-                </div>
-                <div>
-                    <h3>Introduction</h3>
-                    <ul id="member"/>
-                </div>
+<div ng-controller ="IntroductionController">
+    <form class="form-horizontal">
+        <div style="padding-left: 160px">
+            <h3>Introduce Yourself</h3>
+        </div>
+        <div class = "control-group">
+            <label class="control-label"><strong>Name:</strong></label>
+            <div class="controls">
+                <input type = "text" ng-model="name"  style="width: 200px; height: 30px"/>
+            </div>
+        </div>
+        <div class = "control-group">
+            <label class="control-label"><strong>Age:</strong></label>
+            <div class="controls">
+                <input type="number" min="0" ng-model="age" style="width: 200px; height: 30px"/>
+            </div>
+        </div>
+        <div class = "control-group">
+            <label class="control-label"><strong>Sex:</strong></label>
+            <div class="controls">
+                <select id="sex" ng-model="sex" style="width: 200px; height: 30px">
+                    <option value="male" selected="selected">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+        <div class = "control-group">
+            <label class="control-label"><strong>Hometown:</strong></label>
+            <div class="controls">
+                <input type = "text" ng-model="hometown" style="width: 200px; height: 30px"/>
+            </div>
+        </div>
+        <div class = "control-group">
+            <label class="control-label"><strong>Hobby:</strong></label>
+            <div class="controls">
+                <input type = "text" ng-model="hobby" style="width: 200px; height: 30px"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="button" ng-click ="AddAction()" value="Submit"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div style="padding-left: 160px">
+            <h3>Introduction</h3>
+            </div>
+            <ul>
+                <li ng-repeat="person in persons" style="list-style: none">
+                    <i class="icon-user"> </i> I am {{person.Name}}, {{person.Age}}, {{person.Sex}}. My hometown is {{person.Hometown}} and I like {{person.Hobby}}.
+                </li>
+            </ul>
+
+        </div>
+    </form>
+</div>
             </td>
             <td id="chenghong">blabla</td>
          </tr>   

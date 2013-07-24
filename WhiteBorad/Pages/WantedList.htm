@@ -2,15 +2,18 @@
     <table>
     <thead>
     <tr>
-    <th>Wanted</th>
-    <th>By Who</th>
+        <th>    </th>
+        <th>Wanted    </th>
+    <th>   By Who</th>
     <th><img src=""/></th>
     </tr>
     </thead>
         <tbody>
             <tr ng-repeat="wanted in wantedList | filter:search | orderBy:'name'">
+                <td style="visibility:hidden">{{wanted.WantedId}}</td>
                 <td>{{wanted.What}}</td>
                 <td>{{wanted.ByWho}}</td>
+                <td></td>
                 <!--<td>
                         <i ng-click="" class="icon-pencil"></i>
                     </td>-->

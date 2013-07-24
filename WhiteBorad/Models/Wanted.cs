@@ -7,9 +7,6 @@ namespace WhiteBorad.Models
 {
     public class Wanted
     {
-        //public int WantedId;
-        //public string What;
-        //public string ByWho;
         public int WantedId { get; set; }
         public string What { get; set; }
         public string ByWho { get; set; }

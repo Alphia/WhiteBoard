@@ -1,6 +1,6 @@
 ﻿
 whiteBoard.controller('wantedController', ['$scope', '$http', function ($scope, $http) {
-    $scope.Src = '/pages/WantedList.htm';
+    $scope.Src = 'http://localhost:12824/pages/WantedList.htm';
     $scope.wantedList = [];
     
     var initialize = function () {
@@ -9,21 +9,19 @@ whiteBoard.controller('wantedController', ['$scope', '$http', function ($scope, 
     var syncWantedList = function () {
         $http({ method: 'GET', url: '/api/wanted',
             headers: { "Content-Type": "application/json" }
-        }).
-            success(function (data, status) {
+        })
+            .success(function (data, status) {
                 $scope.wantedList = data;
-            }).
-            error(function (data, status) {
+            })
+            .error(function (data, status) {
                 return null;
             });
     };
-    alert("initializing");
     initialize();
-    alert("initialized!");
     $scope.getWantedById = function (id) {
 
     };
-    $scope.saveWantedById = function (id) {
+    $scope.saveWantedById = function () {
 
     };
     $scope.deleteWantedById = function (id) {

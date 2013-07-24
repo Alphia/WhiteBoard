@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Net;
 using System.Web.Http;
+using System.Web.Razor.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using WhiteBorad.Models;
@@ -57,6 +59,13 @@ namespace WhiteBorad.Controllers
         // POST api/<controller>
         public void Post([FromBody]string value)
         {
+            var root = ReadXmlFromFile().ChildNodes[1];
+            var xmlS = new XmlSerializer(typeof(Wanted));
+            var wanted = new Wanted(3,"dd","yy");
+            var stream = new MemoryStream();
+            xmlS.Serialize(stream, wanted);
+            var x = new XmlDocument().ReadNode(new XmlTextReader(stream));
+            x.GetType();
         }
 
         // PUT api/<controller>/5
