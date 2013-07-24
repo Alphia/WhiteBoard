@@ -55,6 +55,7 @@
 
         <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css"/>
         <script src="~/Scripts/Introduct.js"></script>
+        <script src="~/Scripts/my-share.js"></script>
         <style type="text/css">
         .grid {
             width: 200px;
@@ -129,8 +130,18 @@
         </div>
     </form>
 </div>
+            <td id="chenghong">
+                <h2>I Want to Share:</h2>
+                <div ng-controller = "ShareController">
+                    <input type = "text" ng-model = "share" placeholder = "Enter Share">
+                    <button id = "Share" ng-click = "add()">Share</button>
+                    
+                    <button id = "Show" ng-click = "show()">Show</button>
+                    <h3>
+                        I am sharing:
+                    </h3><p>{{Shared}}</p>
+                </div>
             </td>
-            <td id="chenghong">blabla</td>
          </tr>   
     </table>
     </body>

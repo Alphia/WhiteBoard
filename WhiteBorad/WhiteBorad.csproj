@@ -124,6 +124,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\ShareController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WantedController.cs" />
     <Compile Include="Global.asax.cs">
@@ -131,6 +132,7 @@
     </Compile>
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Wanted.cs" />
+    <Compile Include="Models\Sharing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
   </ItemGroup>
@@ -529,6 +531,8 @@
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\wantedController.js" />
     <Content Include="Scripts\whiteBoard.js" />
+    <Content Include="Scripts\my-share.js" />
+    <Content Include="Views\Test.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -582,7 +586,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>12824</DevelopmentServerPort>
+          <DevelopmentServerPort>1475</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
