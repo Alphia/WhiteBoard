@@ -6,18 +6,24 @@
     $scope.AddAction = function () {
         var person = {
             "Name": $scope.name,
-            "Age": $scope.age,
-            "Sex": $scope.sex,
-            "Hometown": $scope.hometown,
-            "Hobby": $scope.hobby
+            "Description": $scope.description,
         };
-        $scope.persons.push(person);
         $http.post('api/person', person).success(function () {
             $scope.name = "";
-            $scope.age = "";
-            $scope.sex = "";
-            $scope.hometown = "";
-            $scope.hobby = "";
+            $scope.description = "";
+            $scope.persons.push(person);
         });
     };
+
+    $scope.Edit = function(person) {
+        person.mode = 'edit';
+    };
+
+    $scope.Save = function(person) {
+        $http.put('api/person', person).success(function () {
+            person.mode = 'show';
+        });
+
+    };
+
 };

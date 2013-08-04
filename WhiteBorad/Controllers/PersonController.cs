@@ -17,13 +17,7 @@ namespace WhiteBorad.Controllers
         public readonly IPersonRepository personRepo;
         public PersonController()
         {
-            string mapPath = HostingEnvironment.MapPath("~/person.xml");
-            personRepo = new XmlPersonRepository(mapPath);
-        }
-
-        public PersonController(string mapPath)
-        {
-            personRepo = new XmlPersonRepository(mapPath);
+            personRepo = new DbPersonRepository();
         }
 
         public PersonController(IPersonRepository personRepo)
@@ -34,6 +28,11 @@ namespace WhiteBorad.Controllers
         public Person PostPerson(Person newPerson)
         {
             return personRepo.Add(newPerson);
+        }
+
+        public void PutPerson(Person updatePerson)
+        {
+            personRepo.Update(updatePerson);
         }
 
         public IEnumerable<Person> GetPerson()
