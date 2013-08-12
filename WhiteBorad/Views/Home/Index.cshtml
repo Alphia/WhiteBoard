@@ -1,80 +1,102 @@
-﻿
+﻿@{
+    Layout = null;
+}
 <html ng-app="whiteBoard">
     <head>
         <title>WhiteBorad</title>
-@*        <script src="~/Scripts/jquery-1.7.1.min.js"></script>*@
-        <script src="~/Scripts/Introduct.js"></script>
+        <script src="~/Scripts/jquery-1.9.1.js"></script>
+        <script src="~/Scripts/jquery.ui.widget.js"></script>
+        <script src="~/Scripts/jquery.iframe-transport.js"></script>
+        <script src="~/Scripts/jquery.fileupload.js"></script>
         <script src="~/Scripts/angular.js"></script>
-        <script src="../../Scripts/whiteBoard.js"></script>
-        <script src="../../Scripts/wantedController.js"></script>
+        <script src="~/Scripts/app.js"></script>
+        <script src="~/Scripts/Introduct.js"></script>
+        <script src="~/Scripts/service.js"></script>
+        <script src="~/Scripts/directive.js"></script>
+        <script src="~/Scripts/wantedController.js"></script>
         <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css"/>
         <script src="~/Scripts/my-share.js"></script>
     </head>
     <body>
-    <table style="width: 100%; table-layout: fixed">
-        <tr>
-            <td id="hegang">
-                <div ng-include ng-controller="wantedController" src="Src" >
-            
-                </div>
-        </td>
-            <td id="liujing">
-<div ng-controller ="IntroductionController">
-    <form class="form-horizontal">
-        <div style="padding-left: 160px">
-            <h3>Introduce Yourself</h3>
-        </div>
-        <div class = "control-group">
-            <label class="control-label"><strong>Name:</strong></label>
-            <div class="controls">
-                <input type = "text" ng-model="name"  style="width: 200px; height: 30px"/>
-            </div>
-        </div>
-        <div class = "control-group">
-            <label class="control-label"><strong>Description:</strong></label>
-            <div class="controls">
-                <input type = "text" ng-model="description" style="width: 200px; height: 30px"/>
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <input type="button" ng-click ="AddAction()" value="Submit"/>
-            </div>
-        </div>
-        <div class="control-group">
-            <div style="padding-left: 160px">
-            <h3>Introduction</h3>
-            </div>
-            <ul>
-                <li ng-repeat="person in persons" style="list-style: none">
-                    <div ng-show="!person.mode || person.mode == 'show'">
-                        <i class="icon-user"> </i> I am {{person.Name}},{{person.Description}}.  <input type="button"  ng-click ="Edit(person)" value="Edit"/>
+        <table style="width: 100%; table-layout: fixed">
+            <tr>
+                <td id="hegang" style="vertical-align: top">
+                     <h2>I Want to Hear</h2>
+@*                     <div ng-include ng-controller="wantedController" src="Src" >           *@
+                    <div>
                     </div>
-                    <div ng-show="person.mode == 'edit'">
-                        <i class="icon-user"> </i> I am <input type="text" ng-model="person.Name"/>,<input type="text" ng-model="person.Description" />.  
-                        <input type="button"  ng-click ="Save(person)" value="Save"/>
-                    </div>
-                </li>
-            </ul>
+                </td>
+                <td id="liujing">
+                <div ng-controller ="IntroductionController">
+                    <form class="form-horizontal">
+                        <div>
+                            <h2>Introduce Yourself</h2>
+                        </div>
+                        <div class = "control-group">
+                            <label class="control-label"><strong>Name:</strong></label>
+                            <div class="controls">
+                                <input type = "text" ng-model="name"  style="width: 200px; height: 30px"/>
+                            </div>
+                        </div>
+                        <div class = "control-group">
+                            <label class="control-label"><strong>Description:</strong></label>
+                            <div class="controls">
+                                <input type = "text" ng-model="description" style="width: 200px; height: 30px"/>
+                            </div>
+                        </div>
+                        <label class="control-label"><strong>Portrait:</strong></label>
+                        <div class="controls">
+                            <input type="file" name="file" data-url="home/upload" multiple upload>
+                        </div>
+                        <div>
+                            <button type="button" ng-click="upload()">Upload</button>
+                        </div>
+                        <div>
+                            <span ng-show="!files.length">No files selected</span>
+                            <span>{{files[0]}}</span>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <input type="button" ng-click ="AddAction()" value="Submit"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div style="padding-left: 160px">
+                                <h3>Introduction</h3>
+                            </div>
+                            <ul>
+                                <li ng-repeat="person in persons" style="list-style: none">
+                                    <div ng-show="!person.mode || person.mode == 'show'">
+                                        <i class="icon-user"> </i> I am {{person.Name}},{{person.Description}}.  <input type="button"  ng-click ="Edit(person)" value="Edit"/>
+                                    </div>
+                                    <div ng-show="person.mode == 'edit'">
+                                        <i class="icon-user"> </i> I am <input type="text" ng-model="person.Name" style="width: 200px; height: 30px"/>,<input type="text" ng-model="person.Description" style="width: 200px; height: 30px"/>.  
+                                        <input type="button"  ng-click ="Save(person)" value="Save"/>
+                                    </div>
+                                    <img src="{{person.Image}}" style="width: 200px;"/>
+                                </li>
+                            </ul>
 
-        </div>
-    </form>
-</div>
-            <td id="chenghong">
-                <h2>I Want to Share:</h2>
-                <div ng-controller = "ShareController">
-                    <input type = "text" ng-model = "share" placeholder = "Enter Share">
-                    <button id = "Share" ng-click = "add()">Share</button>
-                    
-                    <button id = "Show" ng-click = "show()">Show</button>
-                    <h3>
-                        I am sharing:
-                    </h3><p>{{Shared}}</p>
+                        </div>
+                    </form>
                 </div>
-            </td>
-         </tr>   
-    </table>
+                </td>
+                <td id="chenghong" style="vertical-align: top">
+                    <h2>I Want to Share:</h2>
+                          <div ng-controller = "ShareController">
+                        <input type = "text" ng-model = "share" placeholder = "Enter Share">
+                        <button id = "Share" ng-click = "add()">Share</button>
+                    
+                        <button id = "Show" ng-click = "show()">Show</button>
+                        <h3>
+                            I am sharing:
+                        </h3><p>{{Shared}}</p>
+                    </div>
+                </td>
+            </tr>   
+        </table>
     </body>
+
 </html>
 
 
